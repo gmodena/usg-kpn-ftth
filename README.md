@@ -5,7 +5,7 @@ Klik [hier](https://coolhva.github.io/usg-kpn-ftth/posts/unifi-security-gateway-
 
 If you have X4ALL please click [here](https://github.com/coolhva/usg-kpn-ftth/tree/xs4all) to download the specific configuration for XS4ALL.
 
-Please **[download a zip file](https://github.com/coolhva/usg-kpn-ftth/archive/master.zip)** with all the files and do not copy and paste the contents because of the UNIX file structure!
+Please **[download a zip file](https://github.com/coolhva/usg-kpn-ftth/archive/vpn.zip)** with all the files and do not copy and paste the contents because of the UNIX file structure!
 
 1. Place **config.gateway.json** at the unifi controller (*sites/default*) via SCP
 
