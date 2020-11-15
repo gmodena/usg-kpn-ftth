@@ -18,8 +18,13 @@ Please **[download a zip file](https://github.com/coolhva/usg-kpn-ftth/archive/m
 
    KPN sends static routes via DHCP which the USG does not install by default. This script will install the DHCP routes when a DHCP lease is received. The chmod +x command allows the script to be executed. ([source](https://community.ubnt.com/t5/EdgeRouter/DHCP-CLIENT-OPTION-121-not-updates-routes-table/m-p/2506090/highlight/true#M223160))
 
-4. The lan network (and portfowarding if needed) needs to be configured in the Unifi controller
-5. Go to the USG in devices in the controller and force provisioning
+4. Place **setvpn.sh** in */config/scripts/post-config.d/* via SCP
+5. Execute `chmod +x /config/scripts/post-config.d/setvpn.sh` on the USG
+
+   After each firmware upgrade the custom vpn confguration is removed. To overcome this, after a restart the USG will execute this script which will fix the VPN configuration and remove the task from the taskscheduler.
+
+6. The lan network (and portfowarding if needed) needs to be configured in the Unifi controller
+7. Go to the USG in devices in the controller and force provisioning
 
 After provisioning please reboot the USG. After two minutes IPv6 will be enabled. This can be checked by executing `show interfaces` on the USG. If IPTV does not work, please restart the USG again.
 
